@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: stacksensor
+  namespace: kube-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stacksensor
+  template:
+    metadata:
+      labels:
+        app: stacksensor 
+    spec:
+      serviceAccountName: stacksensor
+      containers:
+      - name: stacksensor
+        image: stacksciences/stacksensor:0.3.0 
+        env:
+          - name: TOKEN
+            value: "<your token here>"
+  
