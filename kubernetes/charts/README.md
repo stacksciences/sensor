@@ -1,4 +1,4 @@
-# kubewatch.io pod deployment with k8s
+# StackSensor pod deployment with k8s
 
 ## setup
 
